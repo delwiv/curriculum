@@ -4,7 +4,7 @@ services:
     container_name: lcathala-cv
     restart: unless-stopped
     ports:
-      - "127.0.0.1:4002:3000"
+      - "127.0.0.1:4005:3000"
     healthcheck:
       test: ["CMD", "wget", "-qO-", "http://localhost:3000"]
       interval: 30s
