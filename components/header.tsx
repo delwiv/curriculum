@@ -20,6 +20,7 @@ export function Header() {
     { href: '#about', label: 'À propos' },
     { href: '#skills', label: 'Compétences' },
     { href: '#projects', label: 'Projets' },
+    { href: 'https://wildredbeard.tech', label: 'Blog', external: true },
   ]
 
   return (
@@ -52,6 +53,9 @@ export function Header() {
             <motion.a
               key={link.href}
               href={link.href}
+              {...(link.external
+                ? { target: '_blank', rel: 'noopener noreferrer' }
+                : {})}
               className="text-sm text-muted-foreground hover:text-foreground transition-colors"
               whileHover={{ y: -2 }}
             >
@@ -92,6 +96,9 @@ export function Header() {
                 <a
                   key={link.href}
                   href={link.href}
+                  {...(link.external
+                    ? { target: '_blank', rel: 'noopener noreferrer' }
+                    : {})}
                   className="px-3 py-2 rounded-lg text-foreground hover:bg-card transition-colors"
                   onClick={() => setMobileMenuOpen(false)}
                 >
